@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/**
+ * 微信access_token 路由
+ */
+Route::get('/wx/token','IndexController@getToken');
