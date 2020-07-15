@@ -19,3 +19,11 @@ Route::get('/', function () {
  * 微信access_token 路由
  */
 Route::get('/wx/token','IndexController@getToken');
+/**
+ * curl获取access_token路由
+ */
+Route::get('/wx/curltoken','IndexController@getCurlToken');
+/**
+ * 使用Guzzle获取access_token
+ */
+Route::get('/wx/gtoken','IndexController@getGuzzleToken');
