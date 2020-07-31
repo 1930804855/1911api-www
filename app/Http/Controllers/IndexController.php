@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 //引入guzzle类
 use GuzzleHttp\Client;
+//引入laravel自带生成随机字符串类
+use Illuminate\Support\Str;
 
 class IndexController extends Controller
 {
@@ -66,5 +68,37 @@ class IndexController extends Controller
         $body = $response->getBody();
         //打印 输出
         echo $body;
+    }
+
+    /**
+     * 使用laravel自带随机字符串用于接口返回
+     */
+    public function testToken(){
+        //生成随机字符串
+        $str=Str::random(32);
+        //生成数组
+        $arr=[
+            "access_token"   => $str,
+            "expire_in"      => 7200
+        ];
+        //生成json串
+        echo json_encode($arr);
+    }
+
+    /**
+     * www项目调用api项目测试
+     */
+    public function test(){
+        //api项目地址
+        $url="http://api.1911.com/user/info";
+        //读取
+        echo file_get_contents($url);
+    }
+
+    /**
+     * api项目调用本项目接口测试方法
+     */
+    public function userinfo(){
+        echo "www项目 api项目调用";
     }
 }
