@@ -76,4 +76,11 @@ Route::prefix('test')->group(function(){
 Route::prefix('mstore')->group(function(){
     //登录页面
     Route::get('login','Mstore\LoginController@login');
+    //执行登录
+    Route::post('loginDo','Mstore\LoginController@loginDo');
 });
+
+/**
+ * GitHub第三方登录测试
+ */
+Route::get('oauth/github','OauthController@github');
