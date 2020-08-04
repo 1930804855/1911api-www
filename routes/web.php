@@ -74,10 +74,16 @@ Route::prefix('test')->group(function(){
  * 商店模块 项目
  */
 Route::prefix('mstore')->group(function(){
+    //前台首页
+    Route::get('/','Mstore\IndexController@index');
     //登录页面
     Route::get('login','Mstore\LoginController@login');
     //执行登录
     Route::post('loginDo','Mstore\LoginController@loginDo');
+    //注册页面
+    Route::get('register','Mstore\LoginController@register');
+    //执行注册
+    Route::post('registerDo','Mstore\LoginController@registerDo');
 });
 
 /**

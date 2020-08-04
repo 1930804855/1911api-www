@@ -16,6 +16,7 @@
                     <div class="input-field">
                         <input type="password" class="validate" name="userpwd" placeholder="PASSWORD" required>
                     </div>
+                    <b style="color: red">{{session('msg')}}</b>
                     <a href=""><h6>Forgot Password ?</h6></a>
                     <button class="btn button-default">LOGIN</button>
                 </form>
